@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import maplibregl from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
 
@@ -28,7 +28,7 @@ export default function MapCanvas({
   riskData,
   onCenterChange,
   onZoomChange
-}: MapCanvasProps) {
+}: MapCanvasProps): JSX.Element {
   const mapContainer = useRef<HTMLDivElement>(null)
   const map = useRef<maplibregl.Map | null>(null)
   const [isMapLoaded, setIsMapLoaded] = useState(false)

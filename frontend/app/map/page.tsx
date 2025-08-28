@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef, useCallback } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { useSearchParams } from 'next/navigation'
 import dynamic from 'next/dynamic'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -26,17 +26,20 @@ import {
 import { useAuth } from '@/app/providers'
 
 // Dynamically import map component to avoid SSR issues
-const MapCanvas = dynamic(() => import('@/components/MapCanvas'), { 
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-full flex items-center justify-center bg-gray-100 dark:bg-gray-800">
-      <div className="text-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
-        <p className="text-gray-600 dark:text-gray-300">Loading map...</p>
+const MapCanvas = dynamic(
+  () => import('@/components/MapCanvas'),
+  { 
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-full flex items-center justify-center bg-gray-100 dark:bg-gray-800">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
+          <p className="text-gray-600 dark:text-gray-300">Loading map...</p>
+        </div>
       </div>
-    </div>
-  )
-})
+    )
+  }
+)
 
 export default function MapPage() {
   const searchParams = useSearchParams()

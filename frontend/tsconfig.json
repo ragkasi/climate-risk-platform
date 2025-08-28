@@ -8,6 +8,7 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
+    "noImplicitAny": false,
     "noEmit": true,
     "incremental": true,
     "esModuleInterop": true,
@@ -29,6 +30,7 @@
   "include": [
     "next-env.d.ts",
     ".next/types/**/*.ts",
+    "types/**/*.d.ts",
     "**/*.ts",
     "**/*.tsx"
   ],
