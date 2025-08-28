@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST="{\"app\\\\map\\\\page.tsx -> @/components/MapCanvas\":{\"id\":\"app\\\\map\\\\page.tsx -> @/components/MapCanvas\",\"files\":[\"static/css/_app-pages-browser_components_MapCanvas_tsx.css\",\"static/chunks/_app-pages-browser_components_MapCanvas_tsx.js\"]}}"
